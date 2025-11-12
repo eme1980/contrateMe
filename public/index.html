@@ -37,7 +37,7 @@
 
         </header>
         <section>
-            <p>Me llamo <strong>Miguel</strong>. Tengo 40 años. Vivo en una esquina del
+            <p>Me llamo <strong>Miguel</strong>. Tengo <span id="age"></span> años. Vivo en una esquina del
                 País Vasco llamada Hondarribia. En los noventa hacía páginas web llenas
                 de tablas. He diseñado logotipos, he maquetado informes, he programado
                 formularios interminables, he mezclado gintonics. Ahora diseño interfaces,
@@ -301,6 +301,23 @@
     <script src="./assets/js/svg4everybody.legacy.min.js"></script>
     <script>
         svg4everybody();
+        
+        // Calcular edad dinámicamente
+        function calculateAge() {
+            const birthDate = new Date(1980, 5, 5); // Mes 5 = Junio (0-indexed)
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            return age;
+        }
+        
+        // Establecer la edad en el elemento
+        document.getElementById('age').textContent = calculateAge();
     </script>
 </body>
 
