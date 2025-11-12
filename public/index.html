@@ -8,6 +8,7 @@
     <title>Contrateme</title>
     <!-- Custom styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/age.css" />
     <!-- Favicon -->
     <link rel="icon" href="assets/img/m-icon.svg">
     <!-- Fonts -->
@@ -341,14 +342,28 @@
             if (!el) return;
             // Mostrar indicador de carga mientras se obtiene la hora remota
             el.textContent = '--';
+            if (el.classList) el.classList.add('loading-age');
+
+            // Animación JS: cambiar números rápidamente mientras se carga
+            let animId = null;
             try {
+                animId = setInterval(() => {
+                    // Generar número realista entre 30 y 65 durante la animación
+                    const randomAge = Math.floor(Math.random() * 36) + 30;
+                    el.textContent = randomAge;
+                }, 80);
+
                 const now = await fetchMadridNow();
                 const birthDate = new Date(1980, 5, 5); // 5 de junio de 1980 (mes 5 = junio)
                 const age = calculateAgeFromDates(birthDate, now);
+
+                // Parar animación y mostrar edad real
+                if (animId) clearInterval(animId);
                 el.textContent = age;
             } catch (err) {
                 // En caso de error improbable (fetchMadridNow ya hace fallback), mantener fallback local
                 console.error('Error calculando edad:', err);
+                if (animId) clearInterval(animId);
                 const nowLocal = new Date();
                 const birthDate = new Date(1980, 5, 5);
                 el.textContent = calculateAgeFromDates(birthDate, nowLocal);
