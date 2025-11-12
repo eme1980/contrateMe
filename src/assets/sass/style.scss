@@ -1,0 +1,164 @@
+@import "imports.scss";
+
+body {
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: $font-color;
+  background-color: $body-color;
+  height: 100%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-alt;
+  font-weight: 600;
+  line-height: 1.1em;
+  margin-bottom: 20px;
+}
+
+.content-wrapper {
+  background-color: $body-color;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  line-height: $baseline*2;
+
+  .logo {
+    font-family: $font-family-alt;
+    font-weight: 500;
+    font-size: 24px;
+    color: $font-color;
+
+    &:hover {
+      text-decoration: none;
+      opacity: .5;
+    }
+
+    img {
+      width: 36px;
+      margin-left: $margin;
+    }
+  }
+}
+
+.subheader {
+  margin-bottom: $baseline*2;
+  font-size: 1.2em;
+  font-weight: 600;
+  opacity: .8;
+}
+
+.main-project {
+  margin-bottom: $baseline*2;
+  border-top: 1px solid #ecebe7;
+  padding-top: $baseline/2;
+
+  img {
+    border-radius: 8px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: .8;
+    transition: all .2s linear;
+
+    &:hover {
+      -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(0%);
+      box-shadow: darken($body-color, 15%) 0px 0px 20px;
+    }
+  }
+
+  date {
+    margin-right: 5px;
+    display: inline-block;
+    opacity: .8;
+    font-weight: 700;
+  }
+}
+
+.btn {
+  color: $black;
+  border: 2px solid #444;
+  border-radius: 30px;
+  padding: 5px 10px 1px 3px;
+  background: $white;
+  line-height: 20px;
+  box-shadow: #ecebe7 0px 0px 0px 7px;
+  margin: $margin $margin $margin*2;
+
+  svg {
+    position: relative;
+    top: -2px;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: $black;
+    background: darken($body-color, 10%);
+  }
+}
+
+.modal-content {
+  background: $body-color;
+
+  img {
+    border-radius: 5px;
+  }
+}
+
+footer {
+  background: darken($body-color, 5%);
+  margin-top: $baseline;
+  padding: $baseline;
+  overflow: hidden;
+
+  .logo {
+    font-family: $font-family-alt;
+    font-weight: 500;
+    font-size: 24px;
+
+    img {
+      width: 36px;
+      margin-left: $margin;
+    }
+  }
+
+  svg {
+    position: relative;
+    top: -1px;
+    opacity: .7;
+  }
+
+  .btn {
+    box-shadow: #e2e0d8 0px 0px 0px 7px;
+  }
+
+  .eme {
+    position: absolute;
+    bottom: -104;
+    right: 0;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: .95;
+    width: 240px;
+    transform: rotate(6deg);
+  }
+}
