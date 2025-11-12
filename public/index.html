@@ -301,23 +301,62 @@
     <script src="./assets/js/svg4everybody.legacy.min.js"></script>
     <script>
         svg4everybody();
-        
-        // Calcular edad dinámicamente
-        function calculateAge() {
-            const birthDate = new Date(1980, 5, 5); // Mes 5 = Junio (0-indexed)
-            const today = new Date();
-            let age = today.getFullYear() - birthDate.getFullYear();
-            const monthDiff = today.getMonth() - birthDate.getMonth();
-            
-            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+
+        // Obtener la fecha/hora actual de TimeAPI (Europe/Madrid) y calcular la edad.
+        // En caso de error, se usa la fecha local como fallback.
+        async function fetchMadridNow() {
+            try {
+                const res = await fetch('https://timeapi.bio/timeapi/time', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ region: 'Europe/Madrid' })
+                });
+
+                if (!res.ok) throw new Error('TimeAPI response not ok: ' + res.status);
+
+                const data = await res.json();
+                // La API devuelve un campo `datetime` en formato ISO
+                if (data && data.datetime) {
+                    return new Date(data.datetime);
+                }
+                throw new Error('TimeAPI returned unexpected payload');
+            } catch (err) {
+                // Fallback a la fecha local si la petición falla
+                console.warn('TimeAPI error, usando fecha local como fallback:', err);
+                return new Date();
+            }
+        }
+
+        function calculateAgeFromDates(birthDate, nowDate) {
+            let age = nowDate.getFullYear() - birthDate.getFullYear();
+            const monthDiff = nowDate.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && nowDate.getDate() < birthDate.getDate())) {
                 age--;
             }
-            
             return age;
         }
-        
-        // Establecer la edad en el elemento
-        document.getElementById('age').textContent = calculateAge();
+
+        (async function setAge() {
+            const el = document.getElementById('age');
+            if (!el) return;
+            // Mostrar indicador de carga mientras se obtiene la hora remota
+            el.textContent = '--';
+            try {
+                const now = await fetchMadridNow();
+                const birthDate = new Date(1980, 5, 5); // 5 de junio de 1980 (mes 5 = junio)
+                const age = calculateAgeFromDates(birthDate, now);
+                el.textContent = age;
+            } catch (err) {
+                // En caso de error improbable (fetchMadridNow ya hace fallback), mantener fallback local
+                console.error('Error calculando edad:', err);
+                const nowLocal = new Date();
+                const birthDate = new Date(1980, 5, 5);
+                el.textContent = calculateAgeFromDates(birthDate, nowLocal);
+            } finally {
+                // Quitar clase de carga si existe
+                if (el.classList) el.classList.remove('loading-age');
+            }
+        })();
     </script>
 </body>
 
