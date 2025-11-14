@@ -9,7 +9,7 @@ $body-color: #f7f6f2 !default;
 $font-color: $black;
 
 $baseline: 40px;
-$margin: $baseline/4;
+$margin: calc($baseline/4);
 
 //font family
 $font-family: 'Open Sans', sans-serif !default;

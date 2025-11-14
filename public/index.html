@@ -8,7 +8,6 @@
     <title>Contrateme</title>
     <!-- Custom styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/age.css" />
     <!-- Favicon -->
     <link rel="icon" href="assets/img/m-icon.svg">
     <!-- Fonts -->
@@ -38,11 +37,11 @@
 
         </header>
         <section>
-            <p>Me llamo <strong>Miguel</strong>. Tengo <span id="age"></span> años. Vivo en una esquina del
-                País Vasco llamada Hondarribia. En los noventa hacía páginas web llenas
-                de tablas. He diseñado logotipos, he maquetado informes, he programado
-                formularios interminables, he mezclado gintonics. Ahora diseño interfaces,
-                resuelvo nudos y cuido a clientes. Y hago salmorejo.</p>
+            <p>Me llamo <strong>Miguel</strong>. Tengo <span id="age"></span> años. Vivo
+                en una esquina del País Vasco llamada Hondarribia. En los noventa hacía
+                páginas web llenas de tablas. He diseñado logotipos, he maquetado informes,
+                he programado formularios interminables, he mezclado gintonics. Ahora diseño
+                interfaces, resuelvo nudos y cuido a clientes. Y hago salmorejo.</p>
             <p>A continuación podrá ver algunos de mis últimos trabajos.</p>
         </section>
         <h2>Pridatect</h2>
@@ -51,7 +50,7 @@
             <div class="col-sm-12 col-md-6 col-lg-4"> <span><a href="http://www.pridatect.com" target="_blank">www.pridatect.com</a></span>
 
                 <p>Desde
-                    <date>Enero de 2020</date> a
+                    <date>Enero de 2020</date>a
                     <date>Julio de 2023</date>
                 </p>
                 <p>Pridatect persigue el objetivo de gestionar de forma amigable y segura
@@ -294,15 +293,66 @@
         </div>
     </div>
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/svg4everybody.min.js"></script>
     <script src="./assets/js/svg4everybody.legacy.min.js"></script>
     <script>
         svg4everybody();
+
+        // Modal Management
+        function setupModals() {
+            // Find all buttons with data-toggle="modal"
+            document.querySelectorAll('[data-toggle="modal"]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    if (targetId) {
+                        const modal = document.querySelector(targetId);
+                        if (modal) {
+                            modal.classList.add('show');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    }
+                });
+            });
+
+            // Find all close buttons in modals
+            document.querySelectorAll('.modal .close').forEach(closeBtn => {
+                closeBtn.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('show');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Close modal when clicking outside (backdrop)
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('show');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Close modal on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal.show').forEach(modal => {
+                        modal.classList.remove('show');
+                        document.body.style.overflow = 'auto';
+                    });
+                }
+            });
+        }
+
+        // Initialize modals when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupModals);
+        } else {
+            setupModals();
+        }
 
         // Obtener la fecha/hora actual de TimeAPI (Europe/Madrid) y calcular la edad.
         // En caso de error, se usa la fecha local como fallback.
@@ -310,8 +360,12 @@
             try {
                 const res = await fetch('https://timeapi.bio/timeapi/time', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ region: 'Europe/Madrid' })
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        region: 'Europe/Madrid'
+                    })
                 });
 
                 if (!res.ok) throw new Error('TimeAPI response not ok: ' + res.status);

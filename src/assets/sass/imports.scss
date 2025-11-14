@@ -1,7 +1,11 @@
-@import "variables.scss";
-@import "node_modules/bootstrap/scss/bootstrap";
-@import "fonts.scss";
-@import "icons.scss";
-@import "mixins.scss";
-@import "animation.scss";
-@import "form.scss";
+@forward "variables";
+@forward "mixins";
+@forward "bootstrap-replacement";
+
+@use "variables" as *;
+@use "bootstrap-replacement" as *;
+@use "fonts";
+@use "icons";
+@use "mixins" as *;
+@use "animation";
+@use "form";
