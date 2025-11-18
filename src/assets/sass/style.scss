@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "imports" as *;
 
 body {
@@ -82,7 +83,7 @@ header {
     &:hover {
       -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
       filter: grayscale(0%);
-      box-shadow: darken($body-color, 15%) 0px 0px 20px;
+      box-shadow: color.adjust($body-color, $lightness: -15%) 0px 0px 20px;
     }
   }
 
@@ -112,7 +113,7 @@ header {
 
   &:hover {
     color: $black;
-    background: darken($body-color, 10%);
+    background: color.adjust($body-color, $lightness: -10%);
   }
 }
 
@@ -125,7 +126,7 @@ header {
 }
 
 footer {
-  background: darken($body-color, 5%);
+  background: color.adjust($body-color, $lightness: -5%);
   margin-top: calc($baseline);
   padding: calc($baseline);
   overflow: hidden;
