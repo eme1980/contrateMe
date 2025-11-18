@@ -121,3 +121,4 @@ Este proyecto está bajo la licencia MIT - consulta el archivo [LICENSE.md](LICE
 
 <!-- Test auto-deploy -->
 <!-- Webhook secret removed - testing auto-deploy fix -->
+<!-- Testing with new webhook secret: dokploy2025webhook -->
