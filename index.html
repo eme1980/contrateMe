@@ -81,7 +81,7 @@
                     de navegación y uso de la aplicación, bocetar interfaces y diseñarlos en
                     Figma y coordinar con el equipo de <i>front end</i> la implementación de
                     los diseños e interacciones en la aplicación.</p>
-                <button class="btn" data-toggle="modal" data-target="#pridatectModal">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#pridatectModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -110,7 +110,7 @@
                     sus intereses. Mi labor en nisgo era trabajar la Experiencia de Usuario,
                     tratando de resolver el reto de facilitarle la ingente cantidad de datos
                     de la manera más visual, sencilla y atractiva.</p>
-                <button class="btn" data-toggle="modal" data-target="#nisgoModal">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#nisgoModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -136,7 +136,7 @@
                     capacidad de decisión. Mi labor en la empresa era diseñar cada nueva funcionalidad,
                     implementar la capa más cercana al usuario y planificar junto con el <i>Product Manager</i> el <i>roadmap</i> pensando
                     siempre en el beneficio del usuario.</p>
-                <button class="btn" data-toggle="modal" data-target="#finectModal">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#finectModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -188,7 +188,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Pridatect</h5>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"> 
 
                     </button>
                 </div>
@@ -240,7 +240,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Nisgo</h5>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"> 
 
                     </button>
                 </div>
@@ -274,7 +274,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Finect</h5>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"> 
 
                     </button>
                 </div>
@@ -324,17 +324,6 @@
         svg4everybody();
 
         // Modal Management
-        function setupModals() {
-            // Find all buttons with data-toggle="modal"
-            document.querySelectorAll('[data-toggle="modal"]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
-                    if (targetId) {
-                        const modal = document.querySelector(targetId);
-                        if (modal) {
-                            modal.classList.add('show');
-                            document.body.style.overflow = 'hidden';
-                        }
                     }
                 });
             });
