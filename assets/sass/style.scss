@@ -11,17 +11,6 @@
   --space-xxl: calc(var(--spacing-unit) * 8); // 64px
 }
 
-
-
-
-
-
-  --space-lg: calc(var(--spacing-unit) * 4);  // 32px
-  --space-xl: calc(var(--spacing-unit) * 6);  // 48px
-  --space-xxl: calc(var(--spacing-unit) * 8); // 64px
-}
-
-
 body {
   font-family: $font-family;
   font-size: 14px;
