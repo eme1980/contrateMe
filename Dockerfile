@@ -29,7 +29,7 @@ FROM nginx:stable-alpine
 # Copiar los archivos compilados de la Etapa 1
 # El destino /usr/share/nginx/html es la carpeta por defecto de Nginx para servir la web.
 # Esto asegura que Nginx sirva *solo* el contenido de /public.
-COPY --from=build /app/public /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Exponer el puerto donde Nginx estará escuchando
 EXPOSE 80
