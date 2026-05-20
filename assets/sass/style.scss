@@ -1,3 +1,17 @@
+@use "sass:math";
+
+// Vertical Rhythm & Spacing System (Base 8px)
+:root {
+  --spacing-unit: 8px;
+  --space-xs: calc(var(--spacing-unit) * 1);  // 8px
+  --space-sm: calc(var(--spacing-unit) * 2);  // 16px
+  --space-md: calc(var(--spacing-unit) * 3);  // 24px
+  --space-lg: calc(var(--spacing-unit) * 4);  // 32px
+  --space-xl: calc(var(--spacing-unit) * 6);  // 48px
+  --space-xxl: calc(var(--spacing-unit) * 8); // 64px
+}
+
+
   --space-lg: calc(var(--spacing-unit) * 4);  // 32px
   --space-xl: calc(var(--spacing-unit) * 6);  // 48px
   --space-xxl: calc(var(--spacing-unit) * 8); // 64px
@@ -176,7 +190,6 @@ footer {
     transform: rotate(6deg);
   }
 }@use "sass:color";
-@use "sass:math";
 
 // Vertical Rhythm & Spacing System (Base 8px)
 :root {
