@@ -1,3 +1,15 @@
+
+// Vertical Rhythm & Spacing System (Base 8px)
+:root {
+  --spacing-unit: 8px;
+  --space-xs: calc(var(--spacing-unit) * 1);  // 8px
+  --space-sm: calc(var(--spacing-unit) * 2);  // 16px
+  --space-md: calc(var(--spacing-unit) * 3);  // 24px
+  --space-lg: calc(var(--spacing-unit) * 4);  // 32px
+  --space-xl: calc(var(--spacing-unit) * 6);  // 48px
+  --space-xxl: calc(var(--spacing-unit) * 8); // 64px
+}
+
 @use "sass:color";
 @use "imports" as *;
 
@@ -69,6 +81,9 @@ header {
 }
 
 .main-project {
+  margin-bottom: var(--space-xxl);
+  align-items: center;
+
   margin-bottom: calc($baseline*2);
   border-top: 1px solid #ecebe7;
   padding-top: calc($baseline/2);
@@ -130,6 +145,9 @@ header {
 }
 
 footer {
+  padding: var(--space-xxl) 0;
+  margin-top: var(--space-xxl);
+
   background: color.adjust($body-color, $lightness: -5%);
   margin-top: calc($baseline);
   padding: calc($baseline);
