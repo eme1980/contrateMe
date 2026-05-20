@@ -12,6 +12,10 @@
 }
 
 
+
+
+
+
   --space-lg: calc(var(--spacing-unit) * 4);  // 32px
   --space-xl: calc(var(--spacing-unit) * 6);  // 48px
   --space-xxl: calc(var(--spacing-unit) * 8); // 64px
@@ -191,7 +195,6 @@ footer {
   }
 }@use "sass:color";
 
-// Vertical Rhythm & Spacing System (Base 8px)
 :root {
   --spacing-unit: 8px;
   --space-xs: calc(var(--spacing-unit) * 1);  // 8px
@@ -201,4 +204,3 @@ footer {
   --space-xl: calc(var(--spacing-unit) * 6);  // 48px
   --space-xxl: calc(var(--spacing-unit) * 8); // 64px
 }
-
