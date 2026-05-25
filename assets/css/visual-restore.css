@@ -27,41 +27,64 @@ h1, h2, h3, h4, .logo {
 
 /* Logo Style */
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
     text-decoration: none;
     color: var(--primary-color);
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.4rem;
     font-weight: 700;
+    line-height: 1;
 }
 
 .logo img {
-    width: 24px;
-    height: 24px;
+    height: 1.1em;
+    width: auto;
+    display: block;
 }
 
-/* Project Buttons */
+/* PROJECT BUTTONS - 100% FAITHFUL REPLICA */
 .btn-project {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background-color: var(--primary-color);
-    color: white;
-    border: 2px solid var(--primary-color);
-    border-radius: 4px;
+    padding: 6px 24px 6px 6px; /* Padding izquierdo reducido para el círculo */
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 50px; /* Forma de píldora completa */
     font-family: var(--font-title);
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
     cursor: pointer;
     text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave según imagen */
 }
 
 .btn-project:hover {
-    background-color: transparent;
-    color: var(--primary-color);
+    background-color: #f8f8f8;
+    transform: translateY(-1px);
+}
+
+/* The circular icon container */
+.btn-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.btn-icon-circle svg {
+    width: 16px;
+    height: 16px;
+    stroke: #000000;
+    stroke-width: 3px; /* Trazo más grueso para el "+" */
 }
 
 /* Project Cards */
@@ -83,10 +106,13 @@ date {
     font-size: 0.9rem;
 }
 
+/* PROFILE IMAGE - RESTORED TO ORIGINAL B&W LARGE */
 .eme-profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: grayscale(100%);
+    border-radius: 0;
     object-fit: cover;
 }
 
