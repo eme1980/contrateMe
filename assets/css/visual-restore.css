@@ -1,0 +1,98 @@
+/* Visual Restoration - Miguel Perez Portfolio */
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --accent-color: #555555;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --light-gray: #f8f9fa;
+    --border-color: #e0e0e0;
+    --font-main: 'Open Sans', sans-serif;
+    --font-title: 'Rubik', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: var(--font-title);
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Logo Style */
+.logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.logo img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Project Buttons */
+.btn-project {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-project:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Project Cards */
+.main-project {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+}
+
+.main-project h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Custom elements */
+date {
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.eme-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 3rem;
+    margin-top: 4rem;
+}
