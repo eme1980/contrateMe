@@ -1,121 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Miguel Perez García | Product Designer & Software Developer</title>
-    <link rel="canonical" href="https://contrateme.es/" />
+    
+    <!-- SEO & Meta Tags -->
     <meta name="description" content="Especialista en diseño de producto y desarrollo frontend, enfocado en crear experiencias de usuario intuitivas y eficientes. Experiencia en UX/UI y metodologías Scrum.">
     <meta name="keywords" content="Product Designer, Software Developer, UX/UI, Frontend, Miguel Perez Garcia, Portfolio">
     <meta name="author" content="Miguel Perez Garcia">
-    <link rel="icon" href="assets/img/m-icon.svg">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://contrateme.com/">
+    <meta property="og:title" content="Miguel Perez García | Product Designer & Software Developer">
+    <meta property="og:description" content="Especialista en diseño de producto y desarrollo frontend, enfocado en crear experiencias de usuario intuitivas y eficientes.">
+    <meta property="og:image" content="https://contrateme.com/assets/img/eme.webp">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Open Sans', sans-serif; }
-        h1, h2, h3, .logo { font-family: 'Rubik', sans-serif; }
-        .logo-style { font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit; }
-    </style>
+    
+    <!-- Custom Visual Restore CSS -->
+    <link rel="stylesheet" href="./assets/css/visual-restore.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/m-icon.svg">
 </head>
 <body class="bg-white text-gray-800">
-    <main class="container mx-auto px-4 py-10">
+
+    <main class="container mx-auto px-4 py-8">
         <header class="mb-12">
-            <a href="/" class="logo-style">contráteme<img src="./assets/img/m-icon-comp.svg" class="w-6 h-6" /></a>
+            <a href="/" class="logo">
+                contráteme
+                <img src="./assets/img/m-icon-comp.svg" alt="Logo Icon" />
+            </a>
         </header>
 
-        <section class="mb-16 max-w-3xl">
-            <p class="text-lg leading-relaxed mb-4">Me llamo <strong>Miguel</strong>. Tengo <span id="age" class="font-bold"></span> años. Vivo en una esquina del País Vasco llamada Hondarribia. En los noventa hacía páginas web llenas de tablas. He diseñado logotipos, he maquetado informes, he programado formularios interminables, he mezclado gintonics. Ahora diseño interfaces, resuelvo nudos y cuido a clientes. Y hago salmorejo.</p>
-            <p class="text-lg leading-relaxed">A continuación podrá ver algunos de mis últimos trabajos.</p>
+        <section class="max-w-3xl mb-16">
+            <p class="text-lg mb-4">
+                Me llamo <strong class="font-bold">Miguel</strong>. Tengo <span id="age" class="font-bold">--</span> años. 
+                Vivo en una esquina del País Vasco llamada Hondarribia. En los noventa hacía páginas web llenas de tablas. 
+                He diseñado logotipos, he maquetado informes, he programado formularios interminables, he mezclado gintonics. 
+                Ahora diseño interfaces, resuelvo nudos y cuido a clientes. Y hago salmorejo.
+            </p>
+            <p class="text-lg">A continuación podrá ver algunos de mis últimos trabajos.</p>
         </section>
 
-        <h1 class="text-3xl md:text-4xl font-bold mb-12 text-center md:text-left">Miguel Perez García: Diseño de Producto y Desarrollo Frontend</h1>
+        <h1 class="text-3xl md:text-4xl font-title mb-12">Miguel Perez García: Diseño de Producto y Desarrollo Frontend</h1>
 
-        <!-- Proyecto: Pridatect -->
-        <article class="flex flex-col md:flex-row gap-8 mb-20 items-start">
-            <div class="w-full md:w-1/3">
-                <span class="block mb-4"><a href="http://www.pridatect.com" target="_blank" class="text-blue-600 hover:underline font-medium">www.pridatect.com</a></span>
-                <p class="text-sm text-gray-500 mb-4">Desde <date>Enero de 2020</date> a <date>Julio de 2023</date></p>
-                <p class="text-base leading-relaxed mb-6">Pridatect perseguía el objetivo de gestionar de forma amigable y segura la protección de datos de una empresa. Como <i>Product Designer</i>, me encargo junto al <i>Product Manager</i> de definir y diseñar las líneas generales de navegación y uso de la aplicación, bocetar interfaces y diseñarlos en Figma y coordinar con el equipo de <i>front end</i> la implementación de los diseños e interacciones en la aplicación.</p>
-                <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 transition-colors" data-bs-toggle="modal" data-bs-target="#pridatectModal">
+        <!-- Project: Pridatect -->
+        <article class="main-project grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-12 lg:col-span-4">
+                <span class="block mb-4">
+                    <a href="http://www.pridatect.com" target="_blank" class="text-blue-600 hover:underline">www.pridatect.com</a>
+                </span>
+                <p class="mb-4">
+                    Desde <date>Enero de 2020</date> a <date>Julio de 2023</date>
+                </p>
+                <p class="mb-6">
+                    Pridatect perseguía el objetivo de gestionar de forma amigable y segura la protección de datos de una empresa. 
+                    Como <i>Product Designer</i>, me encargo junto al <i>Product Manager</i> de definir y diseñar las líneas generales de navegación y uso de la aplicación, bocetar interfaces y diseñarlos en Figma y coordinar con el equipo de <i>front end</i> la implementación de los diseños e interacciones en la aplicación.
+                </p>
+                <button class="btn-project" data-bs-toggle="modal" data-bs-target="#pridatectModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                     Más sobre este proyecto
                 </button>
             </div>
-            <div class="w-full md:w-2/3">
-                <img src="./assets/img/pridatect-home.webp" class="w-full h-auto rounded shadow-sm" alt="Interfaz de Pridatect" />
+            <div class="md:col-span-12 lg:col-span-6 lg:col-start-7">
+                <img src="./assets/img/pridatect-home.webp" class="w-full h-auto rounded-lg shadow-sm" alt="Interfaz de la plataforma de protección de datos Pridatect" />
             </div>
         </article>
 
-        <!-- Proyecto: Nisgo -->
-        <h2 class="text-2xl font-bold mb-8">Proyecto: Nisgo</h2>
-        <article class="flex flex-col md:flex-row gap-8 mb-20 items-start">
-            <div class="w-full md:w-1/3">
-                <span class="block mb-4"><a href="http://www.nisgo.com" target="_blank" class="text-blue-600 hover:underline font-medium">www.nisgo.com</a></span>
-                <p class="text-sm text-gray-500 mb-4">Desde <date>Junio de 2018</date> a <date>Diciembre de 2019</date></p>
-                <p class="text-base leading-relaxed mb-6">Nisgo era una herramienta de <i>location intelligence</i> que pretendía acercar a las pequeñas y medianas empresas la información de qué acontece en los puntos de la ciudad que le interesan comercialmente. Mi labor en nisgo era trabajar la Experiencia de Usuario, tratando de resolver el reto de facilitarle la ingente cantidad de datos de la manera más visual, sencilla y atractiva.</p>
-                <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 transition-colors" data-bs-toggle="modal" data-bs-target="#nisgoModal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                    Más sobre este proyecto
-                </button>
-            </div>
-            <div class="w-full md:w-2/3">
-                <img src="./assets/img/nisgo-home.webp" class="w-full h-auto rounded shadow-sm" alt="Interfaz de Nisgo" />
-            </div>
-        </article>
+        <!-- Project: Nisgo -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-title mb-6">Proyecto: Nisgo</h2>
+            <article class="main-project grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-12 lg:col-span-4">
+                    <span class="block mb-4">
+                        <a href="http://www.nisgo.com" target="_blank" class="text-blue-600 hover:underline">www.nisgo.com</a>
+                    </span>
+                    <p class="mb-4">
+                        Desde <date>Junio de 2018</date> a <date>Diciembre de 2019</date>
+                    </p>
+                    <p class="mb-6">
+                        Nisgo era una herramienta de <i>location intelligence</i> que pretendía acercar a las pequeñas y medianas empresas la información de qué acontece en los puntos de la ciudad que le interesan comercialmente. Mi labor era trabajar la Experiencia de Usuario, tratando de resolver el reto de facilitarle la ingente cantidad de datos de la manera más visual, sencilla y atractiva.
+                    </p>
+                    <button class="btn-project" data-bs-toggle="modal" data-bs-target="#nisgoModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        Más sobre este proyecto
+                    </button>
+                </div>
+                <div class="md:col-span-12 lg:col-span-6 lg:col-start-7">
+                    <img src="./assets/img/nisgo-home.webp" class="w-full h-auto rounded-lg shadow-sm" alt="Dashboard de location intelligence de Nisgo" />
+                </div>
+            </article>
+        </div>
 
-        <!-- Proyecto: Finect -->
-        <h2 class="text-2xl font-bold mb-8">Proyecto: Finect</h2>
-        <article class="flex flex-col md:flex-row gap-8 mb-20 items-start">
-            <div class="w-full md:w-1/3">
-                <span class="block mb-4"><a href="http://www.finect.com" target="_blank" class="text-blue-600 hover:underline font-medium">www.finect.com</a></span>
-                <p class="text-sm text-gray-500 mb-4">Desde <date>Marzo de 2013</date> a <date>Febrero de 2017</date></p>
-                <p class="text-base leading-relaxed mb-6">Finect es la red social de finanzas líder en España. Mi labor en la empresa era diseñar cada nueva funcionalidad, implementar la capa más cercana al usuario y planificar junto con el Product Manager el roadmap pensando siempre en el beneficio del usuario.</p>
-                <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 transition-colors" data-bs-toggle="modal" data-bs-target="#nisgoModal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                    Más sobre este proyecto
-                </button>
-            </div>
-            <div class="w-full md:w-2/3">
-                <img src="./assets/img/finect-home.webp" class="w-full h-auto rounded shadow-sm" alt="Interfaz de Finect" />
-            </div>
-        </article>
+        <!-- Project: Finect -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-title mb-6">Proyecto: Finect</h2>
+            <article class="main-project grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-12 lg:col-span-4">
+                    <span class="block mb-4">
+                        <a href="http://www.finect.com" target="_blank" class="text-blue-600 hover:underline">www.finect.com</a>
+                    </span>
+                    <p class="mb-4">
+                        Desde <date>Marzo de 2013</date> a <date>Febrero de 2017</date>
+                    </p>
+                    <p class="mb-6">
+                        Finect es la red social de finanzas líder en España. Mi labor en la empresa era diseñar cada nueva funcionalidad, implementar la capa más cercana al usuario y planificar junto con el <i>Product Manager</i> el <i>roadmap</i> pensando siempre en el beneficio del usuario.
+                    </p>
+                    <button class="btn-project" data-bs-toggle="modal" data-bs-target="#nisgoModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        Más sobre este proyecto
+                    </button>
+                </div>
+                <div class="md:col-span-12 lg:col-span-6 lg:col-start-7">
+                    <img src="./assets/img/finect-home.webp" class="w-full h-auto rounded-lg shadow-sm" alt="Red social financiera Finect" />
+                </div>
+            </article>
+        </div>
     </main>
 
-    <footer class="bg-gray-100 py-12">
+    <footer class="bg-gray-50 border-t border-gray-200 py-16">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="text-center md:text-left">
-                    <h4 class="text-xl font-bold mb-4">¿Quiere más información sobre mi?</h4>
-                    <a href="./assets/img/Miguel_Perez-Product_Designer-CV.pdf" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition-colors" target="_blank">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h4 class="text-xl font-title mb-6">¿Quiere más información sobre mi?</h4>
+                    <a href="./assets/img/Miguel_Perez-Product_Designer-CV.pdf" class="btn-project mb-8" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg>
                         Descargue mi currículum
                     </a>
-                    <div class="mt-6 space-y-2">
-                        <p class="flex items-center gap-2 text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.05 5A5 5 0 0 1 19 8/95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 28.1 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <hr class="my-6 border-gray-300">
+                    <div class="space-y-3">
+                        <p class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             <strong>653946850</strong>
                         </p>
-                        <p class="flex items-center gap-2 text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <p class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="2/6 12,13 2,6"></polyline></svg>
                             <strong>eme1980@gmail.com</strong>
                         </p>
                     </div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <div class="logo-style">contráteme<img src="./assets/img/m-icon-comp.svg" class="w-6 h-6" /></div>
-                    <img src="./assets/img/eme.webp" class="w-24 h-24 rounded-full object-cover shadow-md" alt="Miguel Perez" />
+                <div class="flex flex-row-reverse items-center justify-end gap-6">
+                    <a href="/" class="logo">
+                        contráteme
+                        <img src="./assets/img/m-icon-comp.svg" alt="Logo Icon" />
+                    </a>
+                    <img class="eme-profile-img" src="./assets/img/eme.webp" alt="Miguel Perez Profile" />
                 </div>
             </div>
         </div>
     </footer>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/svg4everybody.min.js"></script>
-    <script src="./assets/js/svg4everybody.legacy.min.js"></script>
+
     <script>
-        svg4everybody();
-        // JS original para la edad y modales simplificado para Tailwind
+        // Obtener la fecha/hora actual de TimeAPI (Europe/Madrid) y calcular la edad.
+        async function fetchMadridNow() {
+            try {
+                const res = await fetch('https://timeapi.bio/timeapi/time', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ region: 'Europe/Madrid' })
+                });
+                if (!res.ok) throw new Error('TimeAPI response not ok');
+                const data = await res.json();
+                return data.datetime ? new Date(data.datetime) : new Date();
+            } catch (err) {
+                return new Date();
+            }
+        }
+
+        function calculateAgeFromDates(birthDate, nowDate) {
+            let age = nowDate.getFullYear() - birthDate.getFullYear();
+            const monthDiff = nowDate.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && nowDate.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        (async function setAge() {
+            const el = document.getElementById('age');
+            if (!el) return;
+            el.textContent = '--';
+            try {
+                const now = await fetchMadridNow();
+                const birthDate = new Date(1980, 5, 5); 
+                el.textContent = calculateAgeFromDates(birthDate, now);
+            } catch (err) {
+                el.textContent = '45'; 
+            }
+        })();
     </script>
 </body>
 </html>
